@@ -62,12 +62,27 @@ public class Main {
 		Cavalo cavalo = new Cavalo(id, nome);
 		
 		listCavalo.add(cavalo);
-
+		System.out.println("Cavalo adicionado com sucesso");
 	}
 
 	private void CadastrarGirafa(int id, String nome) {
 
 		Girafa girafa = new Girafa (id, nome);
 		listGirafa.add(girafa);
+		System.out.println("Girafa adicionada com sucesso");
+	}
+	
+	private void ListarCavalos() {
+		
+		for (Animal cavalo : listCavalo) {
+			System.out.println("Id do cavalo"+cavalo.getId()+"   Nome do cavalo"+cavalo.getNome());
+		}
+		
+		
+	}
+	private void ListarGirafas() {
+		for (Animal girafa : listGirafa) {
+			System.out.println("Id do cavalo"+girafa.getId()+"   Nome do cavalo"+girafa.getNome());
+		}
 	}
 }
