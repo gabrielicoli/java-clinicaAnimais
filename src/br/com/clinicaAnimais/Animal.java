@@ -21,17 +21,8 @@ public abstract class Animal {
 		this.nome = nome;
 	}
 	
-	Scanner s = new Scanner(System.in);	
 	
-     public void cadastroCavalo() {
-		
-		
-		List cavalo = new ArrayList();
-		 System.out.println("Digite o nome do cavalo: ");
-		 nome=s.next();
-		cavalo.add(nome);
-		
-		
-	}
+	
+     
 	
 }
