@@ -21,7 +21,12 @@ public class Main {
 		while (true) {
 			System.out.println("1. Cadastrar cavalo");
 			System.out.println("2. Cadastrar girafa");
-			System.out.println("3. sair");
+			System.out.println("3. Listar Cavalos");
+			System.out.println("4. Listar Girafas");
+			System.out.println("5. Listar todos od animais");
+			System.out.println("6. Remover um animal por id");
+			System.out.println("7. Exibir a quantidade de animais cadastradas por id");
+			System.out.println("8. sair");
 			opcao = s.nextInt();
 
 			switch (opcao) {
@@ -43,8 +48,17 @@ public class Main {
 				nomeGirafa = s.next();
 				CadastrarGirafa(idGirafa, nomeGirafa);
 				break;
-
 			case 3:
+				ListarCavalos();
+			case 4: 
+				ListarGirafas();
+			case 5: 
+				System.out.println("Listando todos os animais: ");
+				ListarCavalos();
+				ListarGirafas();
+			case 6: 
+				
+			case 8:
 				System.exit(0);
 				break;
 
