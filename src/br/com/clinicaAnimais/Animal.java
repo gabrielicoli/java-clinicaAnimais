@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public abstract class Animal {
 
-	public int id;
+	
+public int id;
 	public String nome;
 	public int getId() {
 		return id;
@@ -20,9 +21,5 @@ public abstract class Animal {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
-	
-     
-	
+
 }

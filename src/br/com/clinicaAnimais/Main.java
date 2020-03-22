@@ -1,7 +1,9 @@
 package br.com.clinicaAnimais;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -23,9 +25,9 @@ public class Main {
 			System.out.println("2. Cadastrar girafa");
 			System.out.println("3. Listar Cavalos");
 			System.out.println("4. Listar Girafas");
-			System.out.println("5. Listar todos od animais");
+			System.out.println("5. Listar todos os animais");
 			System.out.println("6. Remover um animal por id");
-			System.out.println("7. Exibir a quantidade de animais cadastradas por id");
+			System.out.println("7. Exibir a quantidade de animais cadastradas por tipo");
 			System.out.println("8. sair");
 			opcao = s.nextInt();
 
@@ -37,27 +39,29 @@ public class Main {
 				nomeCavalo = s.next();
 				System.out.println("Digite o id do cavalo: ");
 				idCavalo = s.nextInt();
-
+				int i=0;
+				++i;
 				CadastrarCavalo(idCavalo, nomeCavalo);
 				break;
 
 			case 2:
 				String nomeGirafa;
 				int idGirafa = 0;
-				System.out.println("Digite o nome do cavalo: ");
+				System.out.println("Digite o nome da Girafa: ");
 				nomeGirafa = s.next();
+				System.out.println("Digite o id da Girafa: ");
+				idGirafa = s.nextInt();
 				CadastrarGirafa(idGirafa, nomeGirafa);
 				break;
 			case 3:
 				ListarCavalos();
+				break;
 			case 4: 
 				ListarGirafas();
 			case 5: 
-				System.out.println("Listando todos os animais: ");
-				ListarCavalos();
-				ListarGirafas();
+				break;
 			case 6: 
-				
+				break;
 			case 8:
 				System.exit(0);
 				break;
@@ -68,11 +72,14 @@ public class Main {
 
 		}
 	}
-	
+	List<Animal> listAnimal= new ArrayList<Animal>();
 	List<Animal> listCavalo = new ArrayList<Animal>();
 	List<Animal> listGirafa = new ArrayList<Animal>();
+	
+	Map<Integer,List<Animal>> mapa = new HashMap<Integer, List<Animal>>();
+	
 	private void CadastrarCavalo(int id, String nome) {
-
+        mapa.put(1, listCavalo);
 		Cavalo cavalo = new Cavalo(id, nome);
 		
 		listCavalo.add(cavalo);
@@ -89,14 +96,17 @@ public class Main {
 	private void ListarCavalos() {
 		
 		for (Animal cavalo : listCavalo) {
-			System.out.println("Id do cavalo"+cavalo.getId()+"   Nome do cavalo"+cavalo.getNome());
+			System.out.println("Id do cavalo: "+cavalo.getId()+"   Nome do cavalo: "+cavalo.getNome());
 		}
 		
 		
 	}
 	private void ListarGirafas() {
 		for (Animal girafa : listGirafa) {
-			System.out.println("Id do cavalo"+girafa.getId()+"   Nome do cavalo"+girafa.getNome());
+			System.out.println("Id da Girafa: "+girafa.getId()+"   Nome da Girafa: "+girafa.getNome());
 		}
+	}
+	private void ListarTodosAnimais(){
+		
 	}
 }
