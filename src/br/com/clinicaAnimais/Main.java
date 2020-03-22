@@ -39,8 +39,7 @@ public class Main {
 				nomeCavalo = s.next();
 				System.out.println("Digite o id do cavalo: ");
 				idCavalo = s.nextInt();
-				int i=0;
-				++i;
+			
 				CadastrarCavalo(idCavalo, nomeCavalo);
 				break;
 
@@ -52,12 +51,15 @@ public class Main {
 				System.out.println("Digite o id da Girafa: ");
 				idGirafa = s.nextInt();
 				CadastrarGirafa(idGirafa, nomeGirafa);
+				s.nextLine();
 				break;
 			case 3:
 				ListarCavalos();
+				s.nextLine();
 				break;
 			case 4: 
 				ListarGirafas();
+				s.nextLine();
 			case 5: 
 				break;
 			case 6: 
@@ -79,11 +81,12 @@ public class Main {
 	Map<Integer,List<Animal>> mapa = new HashMap<Integer, List<Animal>>();
 	
 	private void CadastrarCavalo(int id, String nome) {
-        mapa.put(1, listCavalo);
+       
 		Cavalo cavalo = new Cavalo(id, nome);
 		
 		listCavalo.add(cavalo);
 		System.out.println("Cavalo adicionado com sucesso");
+		s.nextLine();
 	}
 
 	private void CadastrarGirafa(int id, String nome) {
@@ -91,12 +94,14 @@ public class Main {
 		Girafa girafa = new Girafa (id, nome);
 		listGirafa.add(girafa);
 		System.out.println("Girafa adicionada com sucesso");
+		s.nextLine();
 	}
 	
 	private void ListarCavalos() {
 		
 		for (Animal cavalo : listCavalo) {
 			System.out.println("Id do cavalo: "+cavalo.getId()+"   Nome do cavalo: "+cavalo.getNome());
+			s.nextLine();
 		}
 		
 		
@@ -104,7 +109,9 @@ public class Main {
 	private void ListarGirafas() {
 		for (Animal girafa : listGirafa) {
 			System.out.println("Id da Girafa: "+girafa.getId()+"   Nome da Girafa: "+girafa.getNome());
+			s.nextLine();
 		}
+		
 	}
 	private void ListarTodosAnimais(){
 		
