@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Girafa extends Animal {
-	public  Girafa(int id, String nome) {
+	public  Girafa(String nome) {
 			
 		setNome(nome);
 		setId(id);

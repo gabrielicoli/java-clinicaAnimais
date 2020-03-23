@@ -37,10 +37,7 @@ public class Main {
 				int idCavalo = 0;
 				System.out.println("Digite o nome do cavalo: ");
 				nomeCavalo = s.next();
-				System.out.println("Digite o id do cavalo: ");
-				idCavalo = s.nextInt();
-			
-				CadastrarCavalo(idCavalo, nomeCavalo);
+				CadastrarCavalo(nomeCavalo);
 				break;
 
 			case 2:
@@ -48,9 +45,7 @@ public class Main {
 				int idGirafa = 0;
 				System.out.println("Digite o nome da Girafa: ");
 				nomeGirafa = s.next();
-				System.out.println("Digite o id da Girafa: ");
-				idGirafa = s.nextInt();
-				CadastrarGirafa(idGirafa, nomeGirafa);
+				CadastrarGirafa(nomeGirafa);
 				s.nextLine();
 				break;
 			case 3:
@@ -69,7 +64,7 @@ public class Main {
 				break;
 
 			default:
-				System.out.println(" Opção inexistente! Tente novamente.\n\n");
+				System.out.println(" Opção inexistente!\n\n");
 			}
 
 		}
@@ -80,18 +75,18 @@ public class Main {
 	
 	Map<Integer,List<Animal>> mapa = new HashMap<Integer, List<Animal>>();
 	
-	private void CadastrarCavalo(int id, String nome) {
+	private void CadastrarCavalo(String nome) {
        
-		Cavalo cavalo = new Cavalo(id, nome);
+		Cavalo cavalo = new Cavalo(nome);
 		
 		listCavalo.add(cavalo);
 		System.out.println("Cavalo adicionado com sucesso");
 		s.nextLine();
 	}
 
-	private void CadastrarGirafa(int id, String nome) {
+	private void CadastrarGirafa(String nome) {
 
-		Girafa girafa = new Girafa (id, nome);
+		Girafa girafa = new Girafa (nome);
 		listGirafa.add(girafa);
 		System.out.println("Girafa adicionada com sucesso");
 		s.nextLine();
@@ -100,7 +95,8 @@ public class Main {
 	private void ListarCavalos() {
 		
 		for (Animal cavalo : listCavalo) {
-			System.out.println("Id do cavalo: "+cavalo.getId()+"   Nome do cavalo: "+cavalo.getNome());
+			System.out.println("Id do cavalo: "
+					+"   Nome do cavalo: "+cavalo.getNome());
 			s.nextLine();
 		}
 		
@@ -108,12 +104,13 @@ public class Main {
 	}
 	private void ListarGirafas() {
 		for (Animal girafa : listGirafa) {
-			System.out.println("Id da Girafa: "+girafa.getId()+"   Nome da Girafa: "+girafa.getNome());
+			System.out.println("Id da Girafa: "
+					+"   Nome da Girafa: "+girafa.getNome());
 			s.nextLine();
 		}
 		
 	}
-	private void ListarTodosAnimais(){
+	private void ListarTodosAnimais() {
 		
 	}
 }

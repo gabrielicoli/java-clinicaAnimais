@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Cavalo extends Animal {
 	
-	public Cavalo(int id, String nome) {		
+	public Cavalo(String nome) {		
 		setNome(nome);
 		setId(id);
 		List<Cavalo> listaCavalo = new ArrayList<Cavalo>();
