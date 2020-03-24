@@ -54,18 +54,16 @@ public class Main {
 				s.nextLine();
 				break;
 			case 5:ListarTodosAnimais();
-			 for (Animal animalList : listAnimal) {
-					System.out.println(
-							"Id do animal: " + animalList.getId() + "   Nome da Girafa: " + animalList.getNome());
-				}
-				s.nextLine();
+			 
 				s.nextLine();
 				break;
 			case 6:
 				int idAnimal=-1;
-				System.out.println("Remova um animal pelo seu id");
+				System.out.println("Entre com o id a ser removido");
 				idAnimal=s.nextInt();
 				ExcluirAnimalId(idAnimal);
+				ListarTodosAnimais();
+				
 				break;
 			case 8:
 				System.exit(0);
@@ -92,8 +90,11 @@ public class Main {
 		listCavalo.add(cavalo);
 		System.out.println("Cavalo adicionado com sucesso");
 		s.nextLine();
-		System.out.println("id do cavalo: " + cavalo.getIdUnico() + "  |nome:" + cavalo.getNome());
-	}
+		
+		listAnimal.add(cavalo);		
+
+		}	
+	
 
 	// Cadastro Girafa
 	private void CadastrarGirafa(String nome) {
@@ -102,6 +103,10 @@ public class Main {
 		listGirafa.add(girafa);
 		System.out.println("Girafa adicionada com sucesso");
 		s.nextLine();
+		
+			listAnimal.add(girafa);
+		
+		 
 	}
 
 	// Listar cavalo
@@ -109,7 +114,7 @@ public class Main {
 		for (Animal cavalo : listCavalo) {
 
 			System.out.println("Id do cavalo: " + cavalo.getId() + "   Nome do cavalo: " + cavalo.getNome());
-
+			
 		}
 		s.nextLine();
 	}
@@ -123,22 +128,33 @@ public class Main {
 	}
 	
 	//Listar todos os animais
+	
 	private void ListarTodosAnimais() {
 		
-		for (Animal cavaloList : listCavalo) {
-			listAnimal.add(cavaloList);		
-
-		}				
-			
-			 for (Animal girafaList : listGirafa) {
-				listAnimal.add(girafaList);
-			}
-			 
+		for (Animal animalList : listAnimal) {
+			System.out.println(
+					"Id do animal: " + animalList.getId() + "   Nome do animal: " + animalList.getNome());
+		}
+		s.nextLine();
 				
 	}
 	
 	private void ExcluirAnimalId(int id) {
-		listAnimal
-	
+		boolean verificacao=false;
+		for (Animal animalList : listAnimal) {
+			
+			if(id == animalList.getId()) {
+				listAnimal.remove(id);
+				verificacao=true;
+			}	
+			
+			if (verificacao==false) {
+				System.out.println("Id inexistente");
+			}
+			
+		}
+			
 	}
+		
+
 }
