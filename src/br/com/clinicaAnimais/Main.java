@@ -20,6 +20,7 @@ public class Main {
 	private void start() {
 
 		int opcao = 0;
+		Integer id=-1;
 		while (true) {
 			System.out.println("1. Cadastrar cavalo");
 			System.out.println("2. Cadastrar girafa");
@@ -57,7 +58,8 @@ public class Main {
 				s.nextLine();
 			case 5: 
 				break;
-			case 6: 
+			case 6: System.out.println("Remova um animal pelo seu id");
+										ExcluirID(id);
 				break;
 			case 8:
 				System.exit(0);
@@ -93,12 +95,18 @@ public class Main {
 	}
 	
 	private void ListarCavalos() {
+		Integer id= 0;
 		
 		for (Animal cavalo : listCavalo) {
-			System.out.println("Id do cavalo: "
-					+"   Nome do cavalo: "+cavalo.getNome());
-			s.nextLine();
+			
+		mapa.put(id, listCavalo);
+		
 		}
+		
+		
+		for (Map.Entry<Integer, String> entrySet : MapaAnimaisClinica.entrySet()) {
+            System.out.println("Id do cavalo:" + entrySet.getKey() + " nome do animal: "+ entrySet.getValue());            
+        }
 		
 		
 	}
@@ -112,5 +120,8 @@ public class Main {
 	}
 	private void ListarTodosAnimais() {
 		
+	}
+	private void ExcluirID(Integer id) {
+		mapa.remove(id);
 	}
 }
