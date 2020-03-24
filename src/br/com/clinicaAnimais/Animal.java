@@ -1,25 +1,32 @@
 package br.com.clinicaAnimais;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 public abstract class Animal {
 
-	
-public static int id;
-	public String nome;
-	public int getId() {
-		return id;
+	private static int ID_Unico = 0;
+	private String nome;
+	private int id=0;
+	protected void incrementarIdUnico() {
+		ID_Unico += 1;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public static int getIdUnico() {
+		return ID_Unico;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 }
