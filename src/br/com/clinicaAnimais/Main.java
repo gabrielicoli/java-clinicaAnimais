@@ -26,8 +26,8 @@ public class Main {
 			System.out.println("4. Listar Girafas");
 			System.out.println("5. Listar todos os animais");
 			System.out.println("6. Remover um animal por id");
-			// System.out.println("7. Exibir a quantidade de animais cadastradas por tipo");
-			// System.out.println("8. sair");
+			System.out.println("7. Exibir a quantidade de animais cadastrados por tipo");
+			System.out.println("8. sair");
 			opcao = s.nextInt();
 
 			switch (opcao) {
@@ -65,6 +65,10 @@ public class Main {
 				ListarTodosAnimais();
 				
 				break;
+			case 7:				
+				ListarAnimalPeloTipo();
+				s.nextLine();
+				break;
 			case 8:
 				System.exit(0);
 				break;
@@ -82,7 +86,7 @@ public class Main {
 	List<Animal> listGirafa = new ArrayList<Animal>();
 
 	// Criação do mapa
-	Map<Integer, List<Animal>> mapa = new HashMap<Integer, List<Animal>>();
+	Map<String, List<Animal>> mapa = new HashMap<String, List<Animal>>();
 
 	// Cadastro Cavalo
 	private void CadastrarCavalo(String nome) {
@@ -139,22 +143,36 @@ public class Main {
 				
 	}
 	
+	//Excluir um animal pelo seu id
 	private void ExcluirAnimalId(int id) {
-		boolean verificacao=false;
+		boolean verificacao = false;
 		for (Animal animalList : listAnimal) {
-			
-			if(id == animalList.getId()) {
+
+			if (id == animalList.getId()) {
 				listAnimal.remove(id);
-				verificacao=true;
-			}	
-			
-			if (verificacao==false) {
+				verificacao = true;
+				System.out.println("Animal removido com sucesso!");
+			}
+
+			if (verificacao == false) {
 				System.out.println("Id inexistente");
 			}
-			
+
 		}
-			
+
 	}
+	
+	//Listar animal pelo tipo
+	private void ListarAnimalPeloTipo() {
+	String tipo1="cavalo";
+	String tipo2="girafa";
+		mapa.put(tipo1, listCavalo);
+		mapa.put(tipo2, listGirafa);
 		
+		System.out.println(":"+mapa.get(tipo1));
+		
+	}
+	
+	
 
 }
