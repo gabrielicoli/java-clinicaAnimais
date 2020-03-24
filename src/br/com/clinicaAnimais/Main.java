@@ -23,11 +23,11 @@ public class Main {
 			System.out.println("1. Cadastrar cavalo");
 			System.out.println("2. Cadastrar girafa");
 			System.out.println("3. Listar Cavalos");
-			//System.out.println("4. Listar Girafas");
-			//System.out.println("5. Listar todos os animais");
-			//System.out.println("6. Remover um animal por id");
-			//System.out.println("7. Exibir a quantidade de animais cadastradas por tipo");
-			//System.out.println("8. sair");
+			// System.out.println("4. Listar Girafas");
+			// System.out.println("5. Listar todos os animais");
+			// System.out.println("6. Remover um animal por id");
+			// System.out.println("7. Exibir a quantidade de animais cadastradas por tipo");
+			// System.out.println("8. sair");
 			opcao = s.nextInt();
 
 			switch (opcao) {
@@ -81,12 +81,11 @@ public class Main {
 
 	// Cadastro Cavalo
 	private void CadastrarCavalo(String nome) {
-		Cavalo cavalo = new Cavalo(Animal.getIdUnico(), nome);		
-		listCavalo.add(cavalo);		
+		Cavalo cavalo = new Cavalo(Animal.getIdUnico(), nome);
+		listCavalo.add(cavalo);
 		System.out.println("Cavalo adicionado com sucesso");
 		s.nextLine();
-		System.out.println("id do cavalo: "+cavalo.getIdUnico()  
-							+"  |nome:"+ cavalo.getNome());
+		System.out.println("id do cavalo: " + cavalo.getIdUnico() + "  |nome:" + cavalo.getNome());
 	}
 
 	// Cadastro Girafa
@@ -102,7 +101,7 @@ public class Main {
 	private void ListarCavalo() {
 		for (Animal cavalo : listCavalo) {
 
-			System.out.println("Id do cavalo: " + cavalo.getId() + "   Nome dao cavalo: " + cavalo.getNome());
+			System.out.println("Id do cavalo: " + cavalo.getId() + "   Nome do cavalo: " + cavalo.getNome());
 
 		}
 		s.nextLine();

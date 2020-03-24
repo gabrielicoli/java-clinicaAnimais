@@ -5,6 +5,7 @@ public class Girafa extends Animal {
 
 		setNome(nome);
 		setId(id);
+		
 		incrementarIdUnico();
 
 	}
