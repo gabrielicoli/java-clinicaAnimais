@@ -23,9 +23,9 @@ public class Main {
 			System.out.println("1. Cadastrar cavalo");
 			System.out.println("2. Cadastrar girafa");
 			System.out.println("3. Listar Cavalos");
-			// System.out.println("4. Listar Girafas");
-			// System.out.println("5. Listar todos os animais");
-			// System.out.println("6. Remover um animal por id");
+			System.out.println("4. Listar Girafas");
+			System.out.println("5. Listar todos os animais");
+			System.out.println("6. Remover um animal por id");
 			// System.out.println("7. Exibir a quantidade de animais cadastradas por tipo");
 			// System.out.println("8. sair");
 			opcao = s.nextInt();
@@ -53,12 +53,19 @@ public class Main {
 				ListarGirafa();
 				s.nextLine();
 				break;
-			case 5:
-
+			case 5:ListarTodosAnimais();
+			 for (Animal animalList : listAnimal) {
+					System.out.println(
+							"Id do animal: " + animalList.getId() + "   Nome da Girafa: " + animalList.getNome());
+				}
+				s.nextLine();
+				s.nextLine();
 				break;
 			case 6:
+				int idAnimal=-1;
 				System.out.println("Remova um animal pelo seu id");
-
+				idAnimal=s.nextInt();
+				ExcluirAnimalId(idAnimal);
 				break;
 			case 8:
 				System.exit(0);
@@ -110,9 +117,28 @@ public class Main {
 	// Listar Girafa
 	private void ListarGirafa() {
 		for (Animal girafa : listGirafa) {
-			System.out.println("Id da Girafa: " + girafa.getIdUnico() + "   Nome da Girafa: " + girafa.getNome());
+			System.out.println("Id da Girafa: " + girafa.getId() + "   Nome da Girafa: " + girafa.getNome());
 		}
 		s.nextLine();
 	}
+	
+	//Listar todos os animais
+	private void ListarTodosAnimais() {
+		
+		for (Animal cavaloList : listCavalo) {
+			listAnimal.add(cavaloList);		
 
+		}				
+			
+			 for (Animal girafaList : listGirafa) {
+				listAnimal.add(girafaList);
+			}
+			 
+				
+	}
+	
+	private void ExcluirAnimalId(int id) {
+		listAnimal
+	
+	}
 }
