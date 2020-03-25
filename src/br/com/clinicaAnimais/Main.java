@@ -169,8 +169,22 @@ public class Main {
 		mapa.put(tipo1, listCavalo);
 		mapa.put(tipo2, listGirafa);
 		
-		System.out.println(":"+mapa.get(tipo1));
+		System.out.println("Numero de cavalos cadastrados: "+listCavalo.size());
+		int n=1;
+		for (Animal cavalo : listCavalo) {
+			System.out.println("	Dados do cavalo: ID_DO_CAVALO_"+n+":  "+ cavalo.getId()
+								+"| NOME_DO_CAVALO_"+n+": "+ cavalo.getNome());
+			n++;
+		}
+		System.out.println("Numero de Girafas cadastradas: "+listGirafa.size());
+		for (Animal girafa: listGirafa) {
+			System.out.println("	Dados do cavalo: ID_DA_GIRAFA_"+n+":  "+ girafa.getId()
+								+"| NOME_DA_GIRAFA_"+n+": "+ girafa.getNome());
+			n++;
+		}
 		
+		System.out.println("Numero total de animais cadastrados: "+listAnimal.size());
+		s.nextLine();
 	}
 	
 	
